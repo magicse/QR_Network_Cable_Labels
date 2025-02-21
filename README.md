@@ -1,4 +1,4 @@
-# QR Code Label Generator
+# QR Code Label Generator for Network Devices.
 
 ## Overview
 This Python script processes a CSV file containing structured data, generates QR codes, and places them alongside formatted labels. The labels are then arranged on an A4 sheet for easy printing.
