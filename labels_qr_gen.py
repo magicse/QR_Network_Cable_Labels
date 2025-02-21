@@ -225,8 +225,8 @@ def process_csv_file(csv_filename, output_dir):
             name = row['Name']
             id = row['ID']
             ip = row['IP']
-            pidr = row['Division'] # Підрозділ
-            misto = row['City'] # Населений пункт
+            pidr = row['Division'] 
+            misto = row['City'] 
             print(name,id,ip)
 
             # Create the data for the QR code and label
