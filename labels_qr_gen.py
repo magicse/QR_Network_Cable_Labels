@@ -232,7 +232,7 @@ def process_csv_file(csv_filename, output_dir):
             # Create the data for the QR code and label
             data_qr = f"Name: {name}\r\nIP: {ip}"
             #data_qr = f"NAME: {name}\nIP: {ip}\nID: {id}"
-            data_lab = f"{pidr}\nName: {name}\nID: {id}"
+            data_lab = f"{pidr}\nName: {name}\nID: {id}\nIP: {ip}"
 
             # Generate the label image
             label_img = generate_qr_code_label(data_qr, data_lab)
