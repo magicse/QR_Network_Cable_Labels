@@ -3,7 +3,8 @@
 ## Overview
 This Python script processes a CSV file containing structured data, generates QR codes, and places them alongside formatted labels. The labels are then arranged on an A4 sheet for easy printing.
 
-![labels_a4_sheet png_1_1](https://github.com/user-attachments/assets/aad024bb-41fa-4da3-a222-f5de12a844d7)
+<img src="https://github.com/user-attachments/assets/aad024bb-41fa-4da3-a222-f5de12a844d7" width=50% height=50%>
+<img src="https://github.com/user-attachments/assets/1f019ac0-9c05-40ee-ac6d-edba2aa1905c" width=50% height=50%>
 
 
 ## Features
