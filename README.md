@@ -24,12 +24,20 @@ pip install chardet pyqrcode pypng pillow
 
 ## Usage
 ### 1. Prepare the CSV File
-The CSV file should contain the following columns:
+For labels_qr_gen.py the CSV file should contain the following columns:
 - `ID`
 - `Name`
 - `IP`
 - `Division` (Subdivision)
 - `City`
+  
+For flag_label_qr_gen.py the CSV file should contain the following columns:
+- `SrcName`
+- `SrcIP`
+- `SrcPort`
+- `TrgIP`
+- `TrgName`
+- `TrgPort`
 
 The file should use `;` as the delimiter and `|` as the quote character.
 
