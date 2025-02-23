@@ -130,8 +130,7 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
     qr_img_width, qr_img_height = qr_img_a.size
     
     # Add the QR code to the new image
-    img.paste(qr_img_a, (int(1 * MM_TO_PIXELS), int(2 * MM_TO_PIXELS)))
-    #new_img.paste(qr_img_right, (new_img_width // 2, (new_img_height - qr_img_height) // 2))    
+    img.paste(qr_img_a, (round(1 * MM_TO_PIXELS), round(1 * MM_TO_PIXELS)))  
 
     
     font_type = "arial.ttf"
@@ -163,24 +162,24 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
 
     # Draw each line of text
     for i, line in enumerate(a_lines):
-        draw.text((2 * MM_TO_PIXELS + qr_img_width, 1 * MM_TO_PIXELS + i * line_height), line, font=font, fill=(0, 0, 0))    
+        draw.text((2 * MM_TO_PIXELS + qr_img_width, 1 * MM_TO_PIXELS + i * line_height), line, font=font, fill=(0, 0, 0))
 
     # Create a separate image for the flipped text
-    flipped_img = Image.new("RGBA", (int(max_width + qr_img_width), int(max_height)), (255, 255, 255, 0))
+    flipped_img = Image.new("RGBA", (round(max_width + qr_img_width + 2 * MM_TO_PIXELS), round(max_height)), (255, 255, 255, 0))
     flipped_draw = ImageDraw.Draw(flipped_img)
 
     # Add the QR code to the new image
-    flipped_img.paste(qr_img_b, (int(1 * MM_TO_PIXELS), int(1 * MM_TO_PIXELS))) 
+    flipped_img.paste(qr_img_b, (0, 0)) 
 
     # Draw text on the separate image
     for i, line in enumerate(b_lines):
-        flipped_draw.text((2 * MM_TO_PIXELS + qr_img_width, i * line_height), line, font=font, fill=(0, 0, 0))
+        flipped_draw.text((1 * MM_TO_PIXELS + qr_img_width, i * line_height), line, font=font, fill=(0, 0, 0))
 
     # Rotate the image 180 degrees
     flipped_img = flipped_img.rotate(180, expand=True)
 
     # Paste the rotated text onto the main label
-    img.paste(flipped_img, (int(4 * MM_TO_PIXELS), int((LABEL_HEIGHT + 1) * MM_TO_PIXELS)), flipped_img)
+    img.paste(flipped_img, (round(1 * MM_TO_PIXELS), round((LABEL_HEIGHT + 1) * MM_TO_PIXELS)), flipped_img) 
 
 
     # Draw each line of text
