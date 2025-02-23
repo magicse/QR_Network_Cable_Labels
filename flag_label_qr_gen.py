@@ -82,19 +82,15 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
     
     # Start from top-left corner
     path_points.extend(create_arc_points(r, r, r, 180, 270))  # Top-left corner
-    path_points.append((split_x - r, 0))  # Top edge
-    path_points.extend(create_arc_points(split_x - r, r, r, 270, 360))  # Top-right corner of first section
-
-    path_points.append((split_x, split_y1))  # Right edge of first section
     
+    path_points.append((split_x, 0))  # Top edge
+    path_points.append((split_x, split_y1))  # Right edge of first section
     path_points.append((w - r, split_y1))  # Top edge of middle section
     path_points.extend(create_arc_points(w - r, split_y1 + r, r, 270, 360))  # Top-right corner
     path_points.append((w, split_y2 - r))  # Right edge
     path_points.extend(create_arc_points(w - r, split_y2 - r, r, 0, 90))  # Bottom-right corner
-    
     path_points.append((split_x, split_y2))  # Bottom edge of middle section
-    path_points.append((split_x , h - r))  # Right edge of bottom section
-    path_points.extend(create_arc_points(split_x - r, h - r, r, 0, 90))  # Bottom-right corner
+    path_points.append((split_x , h))  # Right edge of bottom section
     path_points.append((r, h))  # Bottom edge
     path_points.extend(create_arc_points(r, h - r, r, 90, 180))  # Bottom-left corner
     path_points.append((0, r))  # Left edge
