@@ -1,4 +1,4 @@
-# Label Generator for Network Devices and Labels.
+# Label Generator for Network Devices and Cables.
 
 ## Overview
 This Python script processes a CSV file containing structured data, generates QR codes, and places them alongside formatted labels. The labels are then arranged on an A4 sheet for easy printing.
