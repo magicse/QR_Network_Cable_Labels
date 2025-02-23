@@ -82,7 +82,6 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
     
     # Start from top-left corner
     path_points.extend(create_arc_points(r, r, r, 180, 270))  # Top-left corner
-    
     path_points.append((split_x, 0))  # Top edge
     path_points.append((split_x, split_y1))  # Right edge of first section
     path_points.append((w - r, split_y1))  # Top edge of middle section
@@ -148,7 +147,7 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
     # Calculate line height
     line_height = draw.textbbox((0, 0), "Ay", font = font)[3]  # Use textbbox to get height
     # Calculate total text height and maximum text width
-    total_text_height = len(a_lines) * line_height
+    total_text_height = max(len(a_lines) * line_height, len(b_lines) * line_height)
     total_text_width = max(draw.textbbox((0, 0), line, font=font)[2] for line in all_lines)
     # Define maximum allowed dimensions
     max_width = LABEL_WIDTH * MM_TO_PIXELS - 4 * MM_TO_PIXELS - qr_img_width
