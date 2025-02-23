@@ -35,8 +35,8 @@ For flag_label_qr_gen.py the CSV file should contain the following columns:
 - `SrcName`
 - `SrcIP`
 - `SrcPort`
+- `TrgName`  
 - `TrgIP`
-- `TrgName`
 - `TrgPort`
 
 The file should use `;` as the delimiter and `|` as the quote character.
