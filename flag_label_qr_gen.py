@@ -3,7 +3,7 @@ from io import BytesIO
 import csv
 import os
 import pyqrcode
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageColor
 
 # Define conversion factor (1 mm = 11.81 pixels at 300 DPI)
 PPI = 300
@@ -31,6 +31,10 @@ CORNER_RADIUS = 0.5 * MM_TO_PIXELS  # Adjust corner roundness
 TOTAL_LABEL_WIDTH_PX = TOTAL_LABEL_WIDTH * MM_TO_PIXELS
 TOTAL_LABEL_HEIGHT_PX = TOTAL_LABEL_HEIGHT * MM_TO_PIXELS
 
+def convert_color(color):
+    if isinstance(color, str):
+        return ImageColor.getrgb(color)  # Convert color name to RGB tuple
+    return color  # If already an RGB tuple, return as is
 
 def detect_file_encoding(csv_filename):
     """
@@ -113,7 +117,7 @@ def draw_label(data_lab_a, data_lab_b, data_qr_a = '', data_qr_b = ''):
     version = 8
     scale = 2
     quiet_zone = 4
-    qr_background = LABEL_COLOR
+    qr_background = convert_color(LABEL_COLOR)
     # Create a QR code with UTF-8 encoding
     qr_a = pyqrcode.create(data_qr_a, encoding='utf-8', version=version, error='M')
     qr_b = pyqrcode.create(data_qr_b, encoding='utf-8', version=version, error='M')
