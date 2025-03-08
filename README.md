@@ -3,9 +3,10 @@
 ## Overview
 This Python scripts processes a CSV file containing structured data, generates QR codes, and places them alongside formatted labels. The labels are then arranged on an A4 sheet for easy printing.
 
-<img src="https://github.com/user-attachments/assets/456bf143-ef80-4b6c-bdb8-67a7c8499740" width=70% height=70%>
+<img src="https://github.com/user-attachments/assets/1becc64e-1176-468f-8d54-456ea4620ed9" width=70% height=70%>
 
 ## Features
+
 - Detects CSV file encoding dynamically using `chardet`.
 - Generates QR codes with encoded information.
 - Creates labels with formatted text.
