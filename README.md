@@ -37,6 +37,8 @@ For Flag_labels_Cable_gen.py and Labels_Cable_gen.py the CSV file should contain
 - `TrgName`  
 - `TrgIP`
 - `TrgPort`
+- `SrcODF` - optional
+- `TrgODF` - optional
 
 The file should use `;` as the delimiter and `|` as the quote character.
 
